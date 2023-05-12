@@ -60,6 +60,31 @@ const members = [
     }
 ]
 
+console.log("array", members);
+
+
+
+
+// cicli
+
+for (let i = 0; i < members.length; i++) {
+
+    const profile = members[i];
+
+    console.log("primo ciclo ", profile);
+
+    for (const key in profile) {
+
+        const element = profile[key];
+        
+        console.log("secondo ciclo ", element);
+        
+    }
+    
+}
+
+
+
 
 
 
