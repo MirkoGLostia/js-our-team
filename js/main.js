@@ -60,8 +60,6 @@ const members = [
     }
 ]
 
-console.log("array", members);
-
 
 
 
@@ -69,19 +67,28 @@ console.log("array", members);
 
 for (let i = 0; i < members.length; i++) {
 
+    // selezione elemento dell'array
     const profile = members[i];
 
-    console.log("primo ciclo ", profile);
-
+    // creazione container per le info in pagina
     document.getElementById("container").innerHTML += `<div id="card ${i}"> </div>`
 
     for (const key in profile) {
 
+        // selezione info nell'oggetto
         const element = profile[key];
 
-        document.getElementById("card " + i).innerHTML += `<span> ${element} </span>`
-        
-        console.log("secondo ciclo ", element);
+        // inserimento delle info in pagina
+        if (element.includes(".jpg")) {
+
+            document.getElementById("card " + i).innerHTML += `<span> <img src="img/${element}"> </span> <br>`
+            
+        } 
+        else {
+
+            document.getElementById("card " + i).innerHTML += `<span> ${element} </span> <br>`
+            
+        }
         
     }
     
