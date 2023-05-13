@@ -73,9 +73,13 @@ for (let i = 0; i < members.length; i++) {
 
     console.log("primo ciclo ", profile);
 
+    document.getElementById("container").innerHTML += `<div id="card ${i}"> </div>`
+
     for (const key in profile) {
 
         const element = profile[key];
+
+        document.getElementById("card " + i).innerHTML += `<span> ${element} </span>`
         
         console.log("secondo ciclo ", element);
         
