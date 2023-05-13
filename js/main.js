@@ -71,7 +71,11 @@ for (let i = 0; i < members.length; i++) {
     const profile = members[i];
 
     // creazione container per le info in pagina
-    document.getElementById("container").innerHTML += `<div id="card ${i}"> </div>`
+    document.getElementById("container").innerHTML += `
+    <div class="col-4 themed-grid-col p-5"> 
+    <div id="card ${i}" class="card" style="width: 18rem;"> 
+    </div> 
+    </div>`
 
     for (const key in profile) {
 
@@ -81,12 +85,14 @@ for (let i = 0; i < members.length; i++) {
         // inserimento delle info in pagina
         if (element.includes(".jpg")) {
 
-            document.getElementById("card " + i).innerHTML += `<span> <img src="img/${element}"> </span> <br>`
+            document.getElementById("card " + i).innerHTML += `<img src="img/${element}" class="card-img-top order-1" alt="profile picture">`
             
         } 
         else {
 
-            document.getElementById("card " + i).innerHTML += `<span> ${element} </span> <br>`
+            document.getElementById("card " + i).innerHTML += `<div class="card-body order-2">
+            <p class="card-text"> ${element} </p>
+            </div>`
             
         }
         
